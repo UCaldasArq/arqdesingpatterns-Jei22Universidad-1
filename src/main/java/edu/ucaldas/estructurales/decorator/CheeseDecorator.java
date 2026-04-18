@@ -5,13 +5,13 @@ public class CheeseDecorator extends ProductDecorator {
         super(product);
     }
 
+    @Override
     public double getPrice() {
-        // TODO
-        return 0;
+        return product.getPrice() + 2.0; // suma el costo del queso
     }
 
+    @Override
     public String getDescription() {
-        // TODO
-        return null;
+        return product.getDescription() + ", queso";
     }
 }

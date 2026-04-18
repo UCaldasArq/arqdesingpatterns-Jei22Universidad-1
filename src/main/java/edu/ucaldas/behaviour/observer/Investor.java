@@ -7,7 +7,8 @@ public class Investor implements Observer {
         this.name = name;
     }
 
+    @Override
     public void update(double price) {
-        // TODO
+        System.out.println(name + " notificado: nuevo precio = " + price);
     }
 }

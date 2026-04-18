@@ -7,8 +7,19 @@ public class XMLtoJSONAdapter implements JSONService {
         this.xmlService = xmlService;
     }
 
+    @Override
     public String getJSON() {
-        // TODO: convertir XML a JSON
-        return null;
+        String xml = xmlService.getData();
+
+        // Conversión MUY básica (para ejercicio)
+        String json = xml
+                .replace("<user>", "{")
+                .replace("</user>", "}")
+                .replace("<name>", "\"name\":\"")
+                .replace("</name>", "\",")
+                .replace("<age>", "\"age\":")
+                .replace("</age>", "");
+
+        return json;
     }
 }

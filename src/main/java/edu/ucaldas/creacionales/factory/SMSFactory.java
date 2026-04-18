@@ -1,8 +1,11 @@
 package edu.ucaldas.creacionales.factory;
 
 public class SMSFactory extends NotificationFactory {
-    Notification createNotification() {
+    @Override
+
+    public Notification createNotification() {
         // TODO
-        return null;
+        return new SMSNotification();
+        //return null;
     }
 }

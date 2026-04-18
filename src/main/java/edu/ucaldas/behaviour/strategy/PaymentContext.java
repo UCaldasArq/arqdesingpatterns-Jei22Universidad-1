@@ -6,8 +6,10 @@ public class PaymentContext {
     public void setStrategy(PaymentStrategy strategy) {
         this.strategy = strategy;
     }
-
     public void executePayment(double amount) {
-        // TODO
+        if (strategy == null) {
+            throw new IllegalStateException("No se ha definido una estrategia de pago");
+        }
+        strategy.pay(amount); 
     }
 }
